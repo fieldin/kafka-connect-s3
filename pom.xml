@@ -4,7 +4,7 @@
 
   <groupId>com.deviantart</groupId>
   <artifactId>kafka-connect-s3</artifactId>
-  <version>0.0.3</version>
+  <version>0.0.4</version>
   <packaging>jar</packaging>
 
   <name>kafka-connect-s3</name>
@@ -19,14 +19,14 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.1</version>
         <configuration>
-          <source>1.7</source>
-          <target>1.7</target>
+          <source>11</source>
+          <target>11</target>
         </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
-        <version>2.4.3</version>
+        <version>3.1.0</version>
         <executions>
           <execution>
             <phase>package</phase>
@@ -39,6 +39,7 @@
                   <exclude>junit:*</exclude>
                   <exclude>jmock:*</exclude>
                   <exclude>mockito-all:*</exclude>
+                  <exclude>org.apache.kafka:kafka-clients</exclude>
                 </excludes>
               </artifactSet>
             </configuration>
@@ -49,8 +50,7 @@
   </build>
 
   <properties>
-    <kafka.version>0.10.1.1</kafka.version>
-    <s3.version>1.10.37</s3.version>
+    <s3.version>1.12.367</s3.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
@@ -63,7 +63,8 @@
     <dependency>
       <groupId>org.apache.kafka</groupId>
       <artifactId>connect-api</artifactId>
-      <version>${kafka.version}</version>
+      <version>2.8.1</version>
+      <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>com.amazonaws</groupId>
@@ -73,13 +74,13 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.13.2</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.mockito</groupId>
-      <artifactId>mockito-all</artifactId>
-      <version>1.9.5</version>
+      <artifactId>mockito-core</artifactId>
+      <version>3.3.0</version>
       <scope>test</scope>
     </dependency>
   </dependencies>

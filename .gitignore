@@ -1,13 +1,37 @@
-local-*
-# Created by https://www.gitignore.io/api/maven
 
-### Maven ###
-target/
-pom.xml.tag
-pom.xml.releaseBackup
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+target/*
+.idea/*
+.DS_Store
+
+splunk-kafka-connect/
 pom.xml.versionsBackup
-pom.xml.next
-release.properties
-dependency-reduced-pom.xml
-buildNumber.properties
-.mvn/timing.properties
+.classpath
+.project
+*.iml
+.settings/
+
+**/__pycache__/*
+test/venv/
+venv
